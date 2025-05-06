@@ -12,8 +12,11 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'sans': ['Figtree', ...defaultTheme.fontFamily.sans],
+                'IMfell': ['IM Fell English', 'sans'],
+                'Nunito': ['Nunito', 'sans'],
             },
+
         },
     },
 
