@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::view('/coach', 'coach.index');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -16,5 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::view('/test', 'game.map');
 
 require __DIR__.'/auth.php';

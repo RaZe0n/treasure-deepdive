@@ -16,7 +16,12 @@ export default {
                 'IMfell': ['IM Fell English', 'sans'],
                 'Nunito': ['Nunito', 'sans'],
             },
-
+            colors: {
+                'primary': '#E5D15A',
+            },
+            animation: {
+                'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+            },
         },
     },
 
