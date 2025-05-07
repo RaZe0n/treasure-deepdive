@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
+Route::view('/coach', 'coach.index');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
