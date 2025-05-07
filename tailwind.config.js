@@ -13,8 +13,7 @@ export default {
         extend: {
             fontFamily: {
                 'sans': ['Figtree', ...defaultTheme.fontFamily.sans],
-                'IMfell': ['IM Fell English', 'sans'],
-                'Nunito': ['Nunito', 'sans'],
+                'chakra': ['Chakra Petch', 'sans'],
             },
             colors: {
                 'primary': '#E5D15A',
