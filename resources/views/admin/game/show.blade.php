@@ -4,6 +4,6 @@
 
 @section('content')
 
-@dd($game->name)
+
 
 @endsection

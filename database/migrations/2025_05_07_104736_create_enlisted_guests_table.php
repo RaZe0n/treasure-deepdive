@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('enlisted_guests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('class_name');
             $table->foreignId('game_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

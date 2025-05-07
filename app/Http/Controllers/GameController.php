@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+    public function validatePin(Request $request)
+    {
+        dd($request->pin);
+    }
 
     public function color() {
         $naam = "Groen";

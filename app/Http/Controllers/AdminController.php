@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EnlistedGuests;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class AdminController extends Controller
         $game = Game::create([
             'name' => $request->name
         ]);
-
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Finn Bruinzeel', 'class_name' => '23SDB']);
         return view('admin.index');
     }
 

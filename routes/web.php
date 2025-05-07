@@ -7,9 +7,8 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Models\Game;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+Route::view('/', 'landingpage');
+Route::post('/', [GameController::class, 'validatePin']);
 
 Route::view('/coach', 'coach.index');
 
