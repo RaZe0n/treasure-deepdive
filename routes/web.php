@@ -11,6 +11,8 @@ Route::view('/coach', 'coach.index');
 
 Route::view('/name', 'nameinput');
 
+Route::view('/wait', 'game/waitingroom');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
