@@ -19,11 +19,13 @@ Route::get('/group/{id}', function ($id) {
 
 Route::view('/name', 'nameinput');
 
-Route::view('/wait', 'game/waitingroom');
+Route::view('/wait', 'game.waitingroom');
 
-Route::view('/leader', 'game/leader');
+Route::view('/leader', 'game.leader');
 
-Route::view('/info', 'game/info');
+Route::view('/dropouts', 'game.dropouts');
+
+Route::view('/info', 'game.info');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
