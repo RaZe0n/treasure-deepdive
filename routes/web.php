@@ -28,6 +28,8 @@ Route::view('/dropouts', 'game.dropouts');
 
 Route::view('/info', 'game.info');
 
+Route::view('/practice', 'game.practice');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
