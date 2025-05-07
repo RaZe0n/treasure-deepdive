@@ -9,6 +9,11 @@ Route::get('/', function () {
 
 Route::view('/coach', 'coach.index');
 
+
+Route::get('/group/{id}', function ($id) {
+    return view('coach.group', ['groupId' => $id]);
+})->name('coach.group');
+
 Route::view('/name', 'nameinput');
 
 Route::view('/wait', 'game/waitingroom');
@@ -25,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::view('/test', 'game.map');
+Route::view('/test', 'game.groupcolor');
+Route::view('/test2', 'landingpage');
 
 require __DIR__.'/auth.php';
