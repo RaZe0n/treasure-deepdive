@@ -13,6 +13,8 @@ Route::view('/name', 'nameinput');
 
 Route::view('/wait', 'game/waitingroom');
 
+Route::view('/leader', 'game/leader');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
