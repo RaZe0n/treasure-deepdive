@@ -35,9 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/test', [GameController::class, 'color']);
+Route::view('/test', 'game.vraag');
 
 Route::view('/test2', 'landingpage');
+Route::view('/test3', 'game.map');
 
 Route::view('/admin', 'admin.index')->name('admin.index')->middleware(AdminMiddleware::class);
 Route::post('/admin', [AdminController::class, 'createGame'])->middleware(AdminMiddleware::class);

@@ -18,7 +18,6 @@ async function getRoute(part, color) {
 
 // https://maps.app.goo.gl/3k3YA5TaJQhcZAXd9
 
-getRoute("deel-1", "red");
 getRoute("deel-2", "green");
 getRoute("deel-3", "blue");
 getRoute("deel-4", "red");
