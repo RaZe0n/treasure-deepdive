@@ -15,4 +15,9 @@ class AdminController extends Controller
 
         return view('admin.index');
     }
+
+    public function show(Game $game)
+    {
+        return view('admin.game.show', ['game' => $game]);
+    }
 }
