@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,5 +22,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::view('/test', 'game.map');
+
+Route::view('/admin', 'admin.index')->name('admin.index')->middleware(AdminMiddleware::class);
+Route::post('/admin', [AdminController::class, 'createGame'])->middleware(AdminMiddleware::class);
 
 require __DIR__.'/auth.php';
