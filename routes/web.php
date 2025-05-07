@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::view('/test', 'game.groupcolor');
+Route::get('/test', [GameController::class, 'color']);
+
 Route::view('/test2', 'landingpage');
 
 require __DIR__.'/auth.php';
