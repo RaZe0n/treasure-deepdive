@@ -9,9 +9,15 @@ Route::get('/', function () {
 
 Route::view('/coach', 'coach.index');
 
+
 Route::get('/group/{id}', function ($id) {
     return view('coach.group', ['groupId' => $id]);
 })->name('coach.group');
+
+Route::view('/name', 'nameinput');
+
+Route::view('/wait', 'game/waitingroom');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
