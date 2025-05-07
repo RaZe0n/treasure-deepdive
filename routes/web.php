@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::view('/test', 'game.map');
+Route::view('/test', 'game.groupcolor');
+Route::view('/test2', 'landingpage');
 
 require __DIR__.'/auth.php';
