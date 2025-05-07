@@ -1,13 +1,13 @@
 <header class="hidden md:block h-full bg-slate-100 border-r-2 border-slate-200" id="sidebar">
     <div class="flex justify-center">
-        <ul class="m-5 w-full text-center flex flex-col gap-5">
-            <li class="text-2xl font-bold">Groups</li>
-            <li class="flex items-center gap-2 relative">
+        <ul class="m-5 w-full flex flex-col gap-5">
+            <li class="text-4xl font-bold text-center">Groups</li>
+            <li class="flex items-center gap-2 relative ml-10">
                 <span class="absolute h-3 w-3 opacity-75 animate-ping rounded-full bg-green-500"></span>
                 <span class="w-3 h-3 rounded-full bg-green-500"></span>
                 <p class="text-xl font-medium text-green-500">Active</p>
             </li>
-            <ul class="list-disc flex flex-col mx-auto w-3/4 gap-2">
+            <ul class="list-disc flex flex-col mx-auto w-1/2 gap-2">
                 <li>group 1</li>
                 <li>group 2</li>
                 <li>group 3</li>
@@ -22,12 +22,12 @@
                 <li>group 12</li>
                 <li>group 13</li>
             </ul>
-            <li class="flex items-center gap-2 relative">
+            <li class="flex items-center gap-2 relative ml-10">
                 <span class="absolute h-3 w-3 opacity-75 animate-ping rounded-full bg-red-500"></span>
                 <span class="w-3 h-3 rounded-full bg-red-500"></span>
                 <p class="text-xl font-medium text-red-500">Waiting</p>
             </li>
-            <ul class="list-disc flex flex-col mx-auto w-3/4 gap-2">
+            <ul class="list-disc flex flex-col mx-auto w-1/2 gap-2">
                 <li>group 1</li>
                 <li>group 2</li>
                 <li>group 3</li>
