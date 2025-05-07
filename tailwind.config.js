@@ -14,6 +14,12 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'primary': '#E5D15A',
+            },
+            animation: {
+                'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+            },
         },
     },
 
