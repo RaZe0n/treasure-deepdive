@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Route::view('/coach', 'coach.index');
 
+Route::view('/name', 'nameinput');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
