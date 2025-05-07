@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+
     public function color() {
         $naam = "Groen";
         $kleur = "green-500";
