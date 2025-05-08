@@ -64,6 +64,10 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::post('/admin/game/{game}/guest', [AdminController::class, 'storeGuest'])->name('admin.game.guest.store');
     Route::delete('/admin/game/{game}/team/{team}/guest/{guest}', [AdminController::class, 'destroyGuest'])->name('admin.game.guest.destroy');
     Route::delete('/admin/game/{game}/enlisted-guest/{guest}', [AdminController::class, 'destroyEnlistedGuest'])->name('admin.game.enlisted-guest.destroy');
+
+    // Coach Management
+    Route::post('/admin/game/{game}/coach', [AdminController::class, 'storeCoach'])->name('admin.game.coach.store');
+    Route::delete('/admin/game/{game}/coach', [AdminController::class, 'removeCoach'])->name('admin.game.coach.remove');
 });
 
 
