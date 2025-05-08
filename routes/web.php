@@ -50,10 +50,21 @@ Route::get('/test', [GameController::class, 'color']);
 
 Route::view('/test2', 'landingpage');
 
-Route::view('/admin', 'admin.index')->name('admin.index')->middleware(AdminMiddleware::class);
-Route::post('/admin', [AdminController::class, 'createGame'])->middleware(AdminMiddleware::class);
+Route::middleware(AdminMiddleware::class)->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::post('/admin', [AdminController::class, 'createGame'])->name('admin.game.create');
+    Route::delete('/admin/game/{game}', [AdminController::class, 'destroy'])->name('admin.game.destroy');
+    Route::get('/admin/game/{game}', [AdminController::class, 'show'])->name('admin.game.show');
+    
+    // Team Management
+    Route::post('/admin/game/{game}/team', [AdminController::class, 'storeTeam'])->name('admin.game.team.store');
+    Route::delete('/admin/game/{game}/team/{team}', [AdminController::class, 'destroyTeam'])->name('admin.game.team.destroy');
+    
+    // Guest Management
+    Route::post('/admin/game/{game}/guest', [AdminController::class, 'storeGuest'])->name('admin.game.guest.store');
+    Route::delete('/admin/game/{game}/team/{team}/guest/{guest}', [AdminController::class, 'destroyGuest'])->name('admin.game.guest.destroy');
+    Route::delete('/admin/game/{game}/enlisted-guest/{guest}', [AdminController::class, 'destroyEnlistedGuest'])->name('admin.game.enlisted-guest.destroy');
+});
 
-Route::get('/game/{game}', [AdminController::class, 'show']);
-Route::post('/game/{game}', [AdminController::class, 'startGame']);
 
 require __DIR__ . '/auth.php';
