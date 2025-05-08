@@ -13,6 +13,7 @@ class Guest extends Model
     protected $fillable = [
         'name',
         'pin',
+        'team_id',
     ];
 
     public function team()

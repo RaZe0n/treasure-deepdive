@@ -34,16 +34,16 @@
                                 <p class="text-sm">• Noah Ali</p>
                                 <p class="text-sm">• Julia Bakker</p>
                             </div>
-                            <button 
-                                @click="expanded = !expanded" 
+                            <button
+                                @click="expanded = !expanded"
                                 class="text-sm text-green-600 hover:text-green-700 mt-2 flex items-center gap-1"
                             >
                                 <span x-text="expanded ? 'Minder tonen' : 'Meer lezen'"></span>
-                                <svg 
-                                    class="w-4 h-4 transition-transform duration-300" 
+                                <svg
+                                    class="w-4 h-4 transition-transform duration-300"
                                     :class="{ 'rotate-180': expanded }"
-                                    fill="none" 
-                                    stroke="currentColor" 
+                                    fill="none"
+                                    stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -65,16 +65,16 @@
                                 <p class="text-sm">• Lucas Jansen</p>
                                 <p class="text-sm">• Sophie de Vries</p>
                             </div>
-                            <button 
-                                @click="expanded = !expanded" 
+                            <button
+                                @click="expanded = !expanded"
                                 class="text-sm text-red-600 hover:text-red-700 mt-2 flex items-center gap-1"
                             >
                                 <span x-text="expanded ? 'Minder tonen' : 'Meer lezen'"></span>
-                                <svg 
-                                    class="w-4 h-4 transition-transform duration-300" 
+                                <svg
+                                    class="w-4 h-4 transition-transform duration-300"
                                     :class="{ 'rotate-180': expanded }"
-                                    fill="none" 
-                                    stroke="currentColor" 
+                                    fill="none"
+                                    stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
