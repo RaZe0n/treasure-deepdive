@@ -22,4 +22,10 @@ class AdminController extends Controller
     {
         return view('admin.game.show', ['game' => $game]);
     }
+
+    public function startGame(Game $game)
+    {
+        $game->pin = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+        $game->save();
+    }
 }
