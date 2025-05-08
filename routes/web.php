@@ -31,9 +31,9 @@ Route::middleware(IsGuestMiddelware::class)->group(function () {
 
     Route::view('/practice', 'game.practice');
 
+    Route::view('/hint', 'game.hint');
 });
 
-Route::view('/hint', 'game.hint');
 
 Route::get('/group/{id}', function ($id) {
     return view('coach.group', ['groupId' => $id]);
