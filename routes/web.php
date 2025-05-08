@@ -58,11 +58,11 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::post('/admin', [AdminController::class, 'createGame'])->name('admin.game.create');
     Route::delete('/admin/game/{game}', [AdminController::class, 'destroy'])->name('admin.game.destroy');
     Route::get('/admin/game/{game}', [AdminController::class, 'show'])->name('admin.game.show');
-    
+
     // Team Management
     Route::post('/admin/game/{game}/team', [AdminController::class, 'storeTeam'])->name('admin.game.team.store');
     Route::delete('/admin/game/{game}/team/{team}', [AdminController::class, 'destroyTeam'])->name('admin.game.team.destroy');
-    
+
     // Guest Management
     Route::post('/admin/game/{game}/guest', [AdminController::class, 'storeGuest'])->name('admin.game.guest.store');
     Route::delete('/admin/game/{game}/team/{team}/guest/{guest}', [AdminController::class, 'destroyGuest'])->name('admin.game.guest.destroy');

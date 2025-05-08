@@ -8,6 +8,7 @@ class Team extends Model
 {
     protected $fillable = [
         'color',
+        'teamgids',
     ];
 
     public function game()
@@ -18,5 +19,10 @@ class Team extends Model
     public function guests()
     {
         return $this->hasMany(Guest::class);
+    }
+
+    public function teamGids()
+    {
+        return $this->belongsTo(Guest::class);
     }
 }

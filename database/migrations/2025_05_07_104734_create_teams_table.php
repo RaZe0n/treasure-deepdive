@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('color');
+            $table->foreignId('guest_id')->nullable();
             $table->foreignId('game_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
