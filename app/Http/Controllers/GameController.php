@@ -61,7 +61,7 @@ class GameController extends Controller
         $naam = "Groen";
         $kleur = "green-500";
 
-        return view("game.vraag2", ["naam" => $naam, "kleur" => $kleur]);
+        return view("game.vraag", ["naam" => $naam, "kleur" => $kleur]);
     }
 
     public function createGroups(Request $request)

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="h-screen bg-[url('../../public/img/background2.png')] bg-cover bg-center object-cover">
+<div class="h-screen bg-[url('../../public/img/waitingroom.png')] bg-cover bg-center object-cover">
     <div class="flex flex-col justify-center items-center h-screen gap-4">
         <h1 class="text-center text-2xl font-chakra">Welkom Naam!</h1>
         <p class="text-center text-2xl">Je bent aangemeld.</p>
