@@ -6,13 +6,13 @@
     <div class="col-span-1">
         <x-coach.header></x-coach.header>
     </div>
-    
+
     <!-- Main Content -->
     <div class="col-span-1 md:col-span-4 p-4 md:p-6">
         <!-- Large Card - Game Setup -->
         <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-4 md:mb-6">
             <h2 class="text-xl md:text-2xl font-bold mb-4">Nieuwe Game Starten</h2>
-            
+
             <!-- Student Overview -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 <div class="bg-green-50 p-4 rounded-lg">
@@ -88,7 +88,9 @@
             <!-- Group Configuration -->
             <div class="bg-gray-50 p-4 rounded-lg mb-4 md:mb-6">
                 <h3 class="text-lg font-semibold mb-4">Groepsconfiguratie</h3>
-                <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                <form action="" method="post" class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                    @csrf
+                    @method('post')
                     <div class="w-full md:flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Groepsgrootte</label>
                         <select class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
@@ -101,14 +103,14 @@
                     </div>
                     <div class="w-full md:flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Aantal groepen</label>
-                        <input type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen">
+                        <input type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen" name="groupsAmount">
                     </div>
                     <div class="w-full md:w-auto">
-                        <button class="w-full md:w-auto bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+                        <button type="submit" class="w-full md:w-auto bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
                             Groepen Genereren
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 

@@ -8,9 +8,17 @@
     <x-toast :message="session('success')" type="success" />
 @endif
 
+
+<form action="" method="post">
+    @csrf
+    @method('post')
+    <button type="submit">Submit</button>
+</form>
+
 @if(session('error'))
     <x-toast :message="session('error')" type="error" />
 @endif
+
 
 
 <div class="min-h-screen p-4 md:p-6">

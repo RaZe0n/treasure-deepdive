@@ -1,33 +1,40 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CoachController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\IsGuestMiddelware;
 use App\Models\Game;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landingpage');
 Route::post('/', [GameController::class, 'validatePin']);
 
-Route::view('/coach', 'coach.index');
+Route::get('/name', [GameController::class, 'showNameInput'])->name('nameInput');
+Route::post('/name', [GameController::class, 'validateName']);
 
+Route::get('/coach', [CoachController::class, 'show']);
+Route::post('/coach', [GameController::class, 'createGroups']);
+
+Route::middleware(IsGuestMiddelware::class)->group(function () {
+    Route::get('/wait', [GameController::class, 'showWaitingRoom'])->name('waitingRoom');
+
+    Route::get('/group', [GameController::class, 'color']);
+
+    Route::view('/leader', 'game.leader');
+
+    Route::view('/dropouts', 'game.dropouts');
+
+    Route::view('/info', 'game.info');
+
+    Route::view('/practice', 'game.practice');
+});
 
 Route::get('/group/{id}', function ($id) {
     return view('coach.group', ['groupId' => $id]);
 })->name('coach.group');
-
-Route::view('/name', 'nameinput');
-
-Route::view('/wait', 'game.waitingroom');
-
-Route::view('/leader', 'game.leader');
-
-Route::view('/dropouts', 'game.dropouts');
-
-Route::view('/info', 'game.info');
-
-Route::view('/practice', 'game.practice');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -59,4 +66,5 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     Route::delete('/admin/game/{game}/enlisted-guest/{guest}', [AdminController::class, 'destroyEnlistedGuest'])->name('admin.game.enlisted-guest.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
