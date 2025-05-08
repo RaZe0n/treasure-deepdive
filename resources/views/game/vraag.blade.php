@@ -49,8 +49,8 @@
                             <p class="text-gray-500 text-sm mt-2">Klik om een afbeelding te uploaden</p>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <input class="p-3 bg-{{ $kleur }} shadow-xl rounded-lg  my-4" type="submit" value="Verstuur">
+                    <div class="flex justify-center w-full">
+                        <input class="w-1/2 p-3 bg-{{ $kleur }} shadow-xl rounded-lg  my-4 text-white font-bold text-xl" type="submit" value="Verstuur">
                     </div>
                 </form>
             </div>
