@@ -14,7 +14,6 @@
             </svg>
             <span class="sr-only">Loading...</span>
         </div>
-        <a href="" class="bg-gray-400 border-black border border-solid rounded-full p-2 w-2/3 text-center"><p>Wat gaat er zo gebeuren?</p></a>
     </div>
 </div>
 
