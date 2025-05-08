@@ -10,6 +10,6 @@ class GameController extends Controller
         $naam = "Groen";
         $kleur = "green-500";
 
-        return view("game.vraag2", ["naam" => $naam, "kleur" => $kleur]);
+        return view("game.groupcolor", ["naam" => $naam, "kleur" => $kleur]);
     }
 }
