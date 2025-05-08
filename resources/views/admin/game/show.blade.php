@@ -140,7 +140,7 @@
                     </div>
                     <div>
                         <label for="team_id" class="block text-sm font-medium text-gray-700 mb-2">Team</label>
-                        <select name="team_id" id="team_id" required
+                        <select name="team_id" id="team_id"
                             class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                             <option value="">Selecteer een team</option>
                             @foreach($game->teams as $team)

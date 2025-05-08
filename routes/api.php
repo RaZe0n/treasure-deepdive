@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\File;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -19,3 +20,5 @@ Route::get('/json/{filename}', function ($filename) {
 
     return response()->json($json);
 });
+
+Route::post('/groups/generate', [App\Http\Controllers\GroupController::class, 'generateGroups'])->middleware('auth');
