@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name")->unique();
             $table->string("pin")->nullable();
+            $table->foreignId('coach_id')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamps();
         });
     }
@@ -26,4 +27,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('games');
     }
-};
+}; 

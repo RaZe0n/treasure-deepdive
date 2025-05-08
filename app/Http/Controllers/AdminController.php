@@ -6,6 +6,7 @@ use App\Models\EnlistedGuests;
 use App\Models\Game;
 use App\Models\Team;
 use App\Models\Guest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -40,7 +41,8 @@ class AdminController extends Controller
     public function show(Game $game)
     {
         $game->load(['teams.guests', 'enlisted_guests']);
-        return view('admin.game.show', ['game' => $game]);
+        $users = User::all();
+        return view('admin.game.show', ['game' => $game, 'users' => $users]);
     }
 
 
@@ -101,5 +103,27 @@ class AdminController extends Controller
         $guest->delete();
         return back()->with('success', 'Guest removed from game');
 
+    }
+
+    public function storeCoach(Request $request, Game $game)
+    {
+        $request->validate([
+            'coach_id' => 'required|exists:users,id'
+        ]);
+
+        $game->update([
+            'coach_id' => $request->coach_id
+        ]);
+
+        return back()->with('success', 'Coach assigned successfully');
+    }
+
+    public function removeCoach(Game $game)
+    {
+        $game->update([
+            'coach_id' => null
+        ]);
+
+        return back()->with('success', 'Coach removed successfully');
     }
 }
