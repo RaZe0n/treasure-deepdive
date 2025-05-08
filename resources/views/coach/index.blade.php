@@ -17,7 +17,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 <div class="bg-green-50 p-4 rounded-lg">
                     <p class="text-sm text-green-600">Ingeschreven Studenten</p>
-                    <p class="text-xl md:text-2xl font-bold">24</p>
+                    <p id="hoeveel" class="text-xl md:text-2xl font-bold">24</p>
                     <div class="mt-2 space-y-1">
                         <div class="transition-all duration-300 ease-in-out" x-data="{ expanded: false }">
                             <div class="space-y-1" :class="{ 'max-h-24 overflow-hidden': !expanded }">
@@ -92,18 +92,9 @@
                     @csrf
                     @method('post')
                     <div class="w-full md:flex-1">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Groepsgrootte</label>
-                        <select class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <option>2 personen</option>
-                            <option>3 personen</option>
-                            <option>4 personen</option>
-                            <option>5 personen</option>
-                            <option>6 personen</option>
-                        </select>
-                    </div>
-                    <div class="w-full md:flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Aantal groepen</label>
-                        <input type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen" name="groupsAmount">
+                        <input id="groepen" type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen" name="groupsAmount">
+                        <div class="m-2" id="personen"></div>
                     </div>
                     <div class="w-full md:w-auto">
                         <button type="submit" class="w-full md:w-auto bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
@@ -170,4 +161,6 @@
         </div>
     </div>
 </div>
+@vite("resources/js/personen.js")
+
 @endsection
