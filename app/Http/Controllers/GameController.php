@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\Guest;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,6 +69,17 @@ class GameController extends Controller
         $pin = Auth::user()->pin;
 
         $game = Game::where('pin', $pin)->first();
+
+        $guests = Guest::where('pin', $game->pin)->get();
+
+        $guests->shuffle();
+
+        for ($i = 0; $i < $request->groupsAmount; $i++) {
+
+            $team = Team::create([
+                'game_id' => $game->id,
+            ]);
+        }
 
     }
 }

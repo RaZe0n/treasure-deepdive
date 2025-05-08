@@ -18,7 +18,7 @@ class GuestFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'pin' => "12345",
+            'pin' => "123456",
         ];
     }
 }
