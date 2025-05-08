@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="bg-[url('../../public/img/background1.png')] bg-cover bg-center object-cover max-h-screen h-screen">
+    <div class="bg-[url('../../public/img/nameinput.png')] bg-cover bg-center object-cover max-h-screen h-screen">
         <div class="absolute right-4">
             <a href="{{ route('login') }}" class="underline mt-2 mr-2 p-2">Coach</a>
         </div>

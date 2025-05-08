@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="bg-[url('../../public/img/background1.png')] bg-cover bg-center">
+    <div class="bg-[url('../../public/img/nameinput.png')] bg-cover bg-center">
         <div class="flex justify-center items-center min-h-screen flex-col">
             <div class="flex items-center justify-evenly h-64 flex-col w-full mt-20">
                 <div class="flex justify-evenly items-center h-3/5 w-5/6 flex-col">

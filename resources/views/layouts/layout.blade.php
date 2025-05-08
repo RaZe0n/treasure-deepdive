@@ -12,6 +12,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://kit.fontawesome.com/43032dec1c.js" crossorigin="anonymous"></script>
     <title>@yield('title', 'TreasureHunt')</title>
     @vite('resources/css/app.css')
 </head>
