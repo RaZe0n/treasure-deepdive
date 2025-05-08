@@ -11,7 +11,7 @@
     <div class="col-span-1 md:col-span-4 p-4 md:p-6">
         <!-- Incoming Work Card -->
         <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-6">
-            <h2 class="text-xl md:text-2xl font-bold mb-4">Openstaande opdrachten van groep {{ $groupId }}</h2>
+            <h2 class="text-xl md:text-2xl font-bold mb-4">Openstaande opdrachten van groep {{ $team->id }}</h2>
             
             <!-- Work Content -->
             <div class="mb-6">
@@ -45,11 +45,12 @@
 
         <!-- Group Info Card -->
         <div class="bg-white rounded-xl shadow-lg p-4 md:p-6">
-            <h2 class="text-xl md:text-2xl font-bold mb-4">Groep {{ $groupId }}</h2>
-            
+            <h2 class="text-xl md:text-2xl font-bold mb-4">Groep {{ $team->id }}</h2>
+
             <!-- Group Status -->
             <div class="mb-6">
                 <div class="flex items-center gap-2">
+                    <span class="absolute h-3 w-3 opacity-75 animate-ping rounded-full bg-green-500"></span>
                     <span class="w-3 h-3 rounded-full bg-green-500"></span>
                     <p class="text-lg font-medium">Spelend</p>
                 </div>
@@ -57,11 +58,15 @@
 
             <!-- Group Members -->
             <div class="mb-6">
-                <h3 class="text-lg font-semibold mb-3">Groepsleden</h3>
-                <div class="space-y-2">
-                    <p class="text-sm">• Jan Jansen</p>
-                    <p class="text-sm">• Lisa de Vries</p>
-                    <p class="text-sm">• Mohammed Ali</p>
+                <h3 class="text-lg font-semibold mb-3">Groepsleden ({{ $teamMembers->count() }})</h3>
+                <div class="space-y-2" id="teamMembers" data-id="{{ $team->id }}">
+                    @foreach ($teamMembers as $teamMember)
+                        @if ($team->guest_id == $teamMember->id)
+                        <p class="text-sm cursor-pointer font-bold" data-id="{{ $teamMember->id }}">• {{ $teamMember->name }} (TeamGids)</p>
+                        @else
+                            <p class="text-sm cursor-pointer" data-id="{{ $teamMember->id }}">• {{ $teamMember->name }}</p>
+                        @endif
+                    @endforeach
                 </div>
             </div>
 
@@ -95,4 +100,7 @@
         </div>
     </div>
 </div>
-@endsection 
+
+@vite('resources/js/group.js')
+
+@endsection

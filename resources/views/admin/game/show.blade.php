@@ -60,7 +60,7 @@
                 <div class="flex justify-between items-center">
                     <div>
                         <h3 class="font-semibold text-lg">Huidige Spelleider</h3>
-                        <p class="text-gray-600">{{ $game->coach->name }}</p>
+                        <p class="text-gray-600">{{ $game->teamGids->name }}</p>
                     </div>
                     <form action="{{ route('admin.game.coach.remove', $game) }}" method="POST" class="inline">
                         @csrf

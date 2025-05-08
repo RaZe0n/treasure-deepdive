@@ -8,19 +8,19 @@
                 <p class="text-xl font-medium text-green-500">Actief</p>
             </li>
             <ul class="list-disc flex flex-col mx-auto w-1/2 gap-2">
-                <li><a href="{{ route('coach.group', ['id' => 1]) }}" class="hover:text-blue-500">Groep 1</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 2]) }}" class="hover:text-blue-500">Groep 2</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 3]) }}" class="hover:text-blue-500">Groep 3</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 4]) }}" class="hover:text-blue-500">Groep 4</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 5]) }}" class="hover:text-blue-500">Groep 5</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 6]) }}" class="hover:text-blue-500">Groep 6</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 7]) }}" class="hover:text-blue-500">Groep 7</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 8]) }}" class="hover:text-blue-500">Groep 8</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 9]) }}" class="hover:text-blue-500">Groep 9</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 10]) }}" class="hover:text-blue-500">Groep 10</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 11]) }}" class="hover:text-blue-500">Groep 11</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 12]) }}" class="hover:text-blue-500">Groep 12</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 13]) }}" class="hover:text-blue-500">Groep 13</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 1]) }}" class="hover:text-blue-500">Groep 1</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 2]) }}" class="hover:text-blue-500">Groep 2</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 3]) }}" class="hover:text-blue-500">Groep 3</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 4]) }}" class="hover:text-blue-500">Groep 4</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 5]) }}" class="hover:text-blue-500">Groep 5</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 6]) }}" class="hover:text-blue-500">Groep 6</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 7]) }}" class="hover:text-blue-500">Groep 7</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 8]) }}" class="hover:text-blue-500">Groep 8</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 9]) }}" class="hover:text-blue-500">Groep 9</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 10]) }}" class="hover:text-blue-500">Groep 10</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 11]) }}" class="hover:text-blue-500">Groep 11</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 12]) }}" class="hover:text-blue-500">Groep 12</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 13]) }}" class="hover:text-blue-500">Groep 13</a></li>
             </ul>
             <li class="flex items-center gap-2 relative ml-10">
                 <span class="absolute h-3 w-3 opacity-75 animate-ping rounded-full bg-red-500"></span>
@@ -28,19 +28,19 @@
                 <p class="text-xl font-medium text-red-500">Wachtend</p>
             </li>
             <ul class="list-disc flex flex-col mx-auto w-1/2 gap-2">
-                <li><a href="{{ route('coach.group', ['id' => 1]) }}" class="hover:text-blue-500">Groep 1</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 2]) }}" class="hover:text-blue-500">Groep 2</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 3]) }}" class="hover:text-blue-500">Groep 3</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 4]) }}" class="hover:text-blue-500">Groep 4</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 5]) }}" class="hover:text-blue-500">Groep 5</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 6]) }}" class="hover:text-blue-500">Groep 6</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 7]) }}" class="hover:text-blue-500">Groep 7</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 8]) }}" class="hover:text-blue-500">Groep 8</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 9]) }}" class="hover:text-blue-500">Groep 9</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 10]) }}" class="hover:text-blue-500">Groep 10</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 11]) }}" class="hover:text-blue-500">Groep 11</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 12]) }}" class="hover:text-blue-500">Groep 12</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 13]) }}" class="hover:text-blue-500">Groep 13</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 1]) }}" class="hover:text-blue-500">Groep 1</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 2]) }}" class="hover:text-blue-500">Groep 2</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 3]) }}" class="hover:text-blue-500">Groep 3</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 4]) }}" class="hover:text-blue-500">Groep 4</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 5]) }}" class="hover:text-blue-500">Groep 5</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 6]) }}" class="hover:text-blue-500">Groep 6</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 7]) }}" class="hover:text-blue-500">Groep 7</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 8]) }}" class="hover:text-blue-500">Groep 8</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 9]) }}" class="hover:text-blue-500">Groep 9</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 10]) }}" class="hover:text-blue-500">Groep 10</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 11]) }}" class="hover:text-blue-500">Groep 11</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 12]) }}" class="hover:text-blue-500">Groep 12</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 13]) }}" class="hover:text-blue-500">Groep 13</a></li>
             </ul>
 
         </ul>
@@ -72,19 +72,19 @@
                 <p class="text-xl font-medium text-green-500">Active</p>
             </li>
             <ul class="list-disc flex flex-col mx-auto w-3/4 gap-2">
-                <li><a href="{{ route('coach.group', ['id' => 1]) }}" class="hover:text-blue-500">group 1</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 2]) }}" class="hover:text-blue-500">group 2</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 3]) }}" class="hover:text-blue-500">group 3</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 4]) }}" class="hover:text-blue-500">group 4</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 5]) }}" class="hover:text-blue-500">group 5</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 6]) }}" class="hover:text-blue-500">group 6</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 7]) }}" class="hover:text-blue-500">group 7</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 8]) }}" class="hover:text-blue-500">group 8</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 9]) }}" class="hover:text-blue-500">group 9</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 10]) }}" class="hover:text-blue-500">group 10</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 11]) }}" class="hover:text-blue-500">group 11</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 12]) }}" class="hover:text-blue-500">group 12</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 13]) }}" class="hover:text-blue-500">group 13</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 1]) }}" class="hover:text-blue-500">group 1</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 2]) }}" class="hover:text-blue-500">group 2</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 3]) }}" class="hover:text-blue-500">group 3</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 4]) }}" class="hover:text-blue-500">group 4</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 5]) }}" class="hover:text-blue-500">group 5</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 6]) }}" class="hover:text-blue-500">group 6</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 7]) }}" class="hover:text-blue-500">group 7</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 8]) }}" class="hover:text-blue-500">group 8</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 9]) }}" class="hover:text-blue-500">group 9</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 10]) }}" class="hover:text-blue-500">group 10</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 11]) }}" class="hover:text-blue-500">group 11</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 12]) }}" class="hover:text-blue-500">group 12</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 13]) }}" class="hover:text-blue-500">group 13</a></li>
             </ul>
             <li class="flex items-center gap-2 relative">
                 <span class="absolute h-3 w-3 opacity-75 animate-ping rounded-full bg-red-500"></span>
@@ -92,19 +92,19 @@
                 <p class="text-xl font-medium text-red-500">Waiting</p>
             </li>
             <ul class="list-disc flex flex-col mx-auto w-3/4 gap-2">
-                <li><a href="{{ route('coach.group', ['id' => 1]) }}" class="hover:text-blue-500">group 1</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 2]) }}" class="hover:text-blue-500">group 2</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 3]) }}" class="hover:text-blue-500">group 3</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 4]) }}" class="hover:text-blue-500">group 4</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 5]) }}" class="hover:text-blue-500">group 5</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 6]) }}" class="hover:text-blue-500">group 6</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 7]) }}" class="hover:text-blue-500">group 7</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 8]) }}" class="hover:text-blue-500">group 8</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 9]) }}" class="hover:text-blue-500">group 9</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 10]) }}" class="hover:text-blue-500">group 10</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 11]) }}" class="hover:text-blue-500">group 11</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 12]) }}" class="hover:text-blue-500">group 12</a></li>
-                <li><a href="{{ route('coach.group', ['id' => 13]) }}" class="hover:text-blue-500">group 13</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 1]) }}" class="hover:text-blue-500">group 1</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 2]) }}" class="hover:text-blue-500">group 2</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 3]) }}" class="hover:text-blue-500">group 3</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 4]) }}" class="hover:text-blue-500">group 4</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 5]) }}" class="hover:text-blue-500">group 5</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 6]) }}" class="hover:text-blue-500">group 6</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 7]) }}" class="hover:text-blue-500">group 7</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 8]) }}" class="hover:text-blue-500">group 8</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 9]) }}" class="hover:text-blue-500">group 9</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 10]) }}" class="hover:text-blue-500">group 10</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 11]) }}" class="hover:text-blue-500">group 11</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 12]) }}" class="hover:text-blue-500">group 12</a></li>
+                <li><a href="{{ route('coach.group', ['team' => 13]) }}" class="hover:text-blue-500">group 13</a></li>
                 <div class="h-10 w-full"></div>
             </ul>
         </ul>

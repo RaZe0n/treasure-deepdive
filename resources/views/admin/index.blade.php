@@ -18,24 +18,24 @@
         <!-- Game Creation Card -->
         <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-6">
             <h2 class="text-xl md:text-2xl font-bold mb-4">Nieuwe Game Starten</h2>
-            
+
             <form action="/admin" method="post" class="space-y-4">
                 @csrf
                 @method('post')
-                
+
                 <!-- Game Configuration -->
                 <div class="bg-gray-50 p-4 rounded-lg">
                     <div class="grid grid-cols-1 gap-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Game Naam</label>
-                            <input type="text" name="name" id="name" 
+                            <input type="text" name="name" id="name"
                                 class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                 placeholder="Voer game naam in">
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" 
+                <button type="submit"
                     class="w-full md:w-auto bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition flex items-center justify-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />

@@ -36,7 +36,7 @@ class GameController extends Controller
     {
         $game = Game::find(session('game_id'));
 
-        $isValid = $game->enlisted_guests()->where('name', $request->name)->exists();
+        $isValid = $game->enlisted_guests()->where('name', ucwords()($request->name))->exists();
 
         if (!$isValid) {
             return back()->withErrors(['error' => '"' . $request->name . '" bestaat niet']);
@@ -70,15 +70,28 @@ class GameController extends Controller
 
         $game = Game::where('pin', $pin)->first();
 
-        $guests = Guest::where('pin', $game->pin)->get();
+        $guests = Guest::where('pin', $game->pin)->inRandomOrder()->get();
 
-        $guests->shuffle();
+        $totalGuests = $guests->count();
+        $totalTeams = $request->groupsAmount;
+
+        $defaultTeamSize = intdiv($totalGuests, $totalTeams);
+        $leftOverGuests = $totalGuests % $totalTeams;
 
         for ($i = 0; $i < $request->groupsAmount; $i++) {
-
+        $GuestCount = $i < $leftOverGuests ? $defaultTeamSize + 1 : $defaultTeamSize;
             $team = Team::create([
                 'game_id' => $game->id,
+                'color' => 'red',
             ]);
+
+            $teamMembers = collect();
+            for ($ii = 0; $ii < $GuestCount; $ii++) {
+                $guests->first()->team_id = $team->id;
+                $guests->first()->save();
+                $teamMembers->push($guests->shift());
+            }
+            $teamMembers = $guests->slice($GuestCount);
         }
 
     }

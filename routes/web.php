@@ -6,7 +6,6 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\IsGuestMiddelware;
-use App\Models\Game;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'landingpage');
@@ -35,9 +34,8 @@ Route::middleware(IsGuestMiddelware::class)->group(function () {
 });
 
 
-Route::get('/group/{id}', function ($id) {
-    return view('coach.group', ['groupId' => $id]);
-})->name('coach.group');
+Route::get('/group/{team}', [CoachController::class, 'showGroup'])->name('coach.group');
+Route::put('/group/changeTeamGids', [CoachController::class, 'changeTeamGids']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
