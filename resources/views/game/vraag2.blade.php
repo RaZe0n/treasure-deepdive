@@ -38,8 +38,8 @@
                             <input class="w-full rounded-md text-start" type="text" name="antwoord" id="antwoord" placeholder="vul hier je antwoord in">
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <input class="p-3 bg-{{ $kleur }} shadow-xl rounded-lg  my-4" type="submit" value="Verstuur">
+                    <div class="flex justify-center w-full">
+                        <input class="w-1/2 p-3 bg-{{ $kleur }} shadow-xl rounded-lg my-4 text-xl text-white font-bold" type="submit" value="Verstuur">
                     </div>
                 </form>
             </div>
