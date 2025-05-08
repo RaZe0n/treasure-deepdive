@@ -48,6 +48,7 @@ class AdminController extends Controller
     {
         $game->pin = str_pad(random_int(0, 999999), 6, '0', STR_PAD_LEFT);
         $game->save();
+    }
 
     public function destroy(Game $game)
     {
