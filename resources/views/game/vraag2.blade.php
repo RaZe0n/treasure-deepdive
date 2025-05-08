@@ -33,20 +33,9 @@
                     <img class="object-fit" src="/img/Peerd_van_ome_Loeks_Groningen.jpg" alt="">
                 </div>
                 <form action="post">
-                    <div class="w-[380px] p-6 bg-white rounded-2xl shadow-lg">
+                    <div class="w-[380px] p-4 bg-slate-50 rounded-2xl shadow-lg">
                         <div class="flex items-center justify-between gap-4 w-full">
-                            <div
-                                class="w-20 h-20 flex flex-col justify-center items-center border border-gray-300 rounded-lg cursor-pointer">
-                                <input type="file" name="image" id="image" class="hidden">
-                                <label for="image" class="cursor-pointer hover:text-gray-600 transition-colors">
-                                    <svg class="w-10 h-10 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </label>
-                            </div>
-                            <p class="text-gray-500 text-sm mt-2">Klik om een afbeelding te uploaden</p>
+                            <input class="w-full rounded-md text-start" type="text" name="antwoord" id="antwoord" placeholder="vul hier je antwoord in">
                         </div>
                     </div>
                     <div class="flex justify-end">

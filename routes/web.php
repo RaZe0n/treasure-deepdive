@@ -36,9 +36,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::view('/test', 'game.vraag');
-
-Route::view('/test2', 'landingpage');
-Route::view('/test3', 'game.map');
+Route::get('/test2', [GameController::class, 'color']);
+Route::view('/map', 'game.map');
 
 Route::view('/admin', 'admin.index')->name('admin.index')->middleware(AdminMiddleware::class);
 Route::post('/admin', [AdminController::class, 'createGame'])->middleware(AdminMiddleware::class);
