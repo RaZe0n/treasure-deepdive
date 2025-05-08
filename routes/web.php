@@ -49,9 +49,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/test', [GameController::class, 'color']);
-
-Route::view('/test2', 'landingpage');
+Route::view('/test', 'game.vraag');
+Route::get('/test2', [GameController::class, 'color']);
+Route::view('/map', 'game.map');
 
 Route::middleware(AdminMiddleware::class)->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
