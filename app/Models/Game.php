@@ -11,6 +11,7 @@ class Game extends Model
     protected $fillable = [
         'name',
         'pin',
+        'should_redirect_guests',
         'coach_id',
     ];
 

@@ -88,17 +88,17 @@
             <!-- Group Configuration -->
             <div class="bg-gray-50 p-4 rounded-lg mb-4 md:mb-6">
                 <h3 class="text-lg font-semibold mb-4">Groepsconfiguratie</h3>
-                <form action="" method="post" class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                <form id="groupForm" class="flex flex-col md:flex-row items-start md:items-center gap-4">
                     @csrf
                     @method('post')
                     <div class="w-full md:flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Groepsgrootte</label>
-                        <select class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <option>2 personen</option>
-                            <option>3 personen</option>
-                            <option>4 personen</option>
-                            <option>5 personen</option>
-                            <option>6 personen</option>
+                        <select name="groupSize" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="2">2 personen</option>
+                            <option value="3">3 personen</option>
+                            <option value="4">4 personen</option>
+                            <option value="5">5 personen</option>
+                            <option value="6">6 personen</option>
                         </select>
                     </div>
                     <div class="w-full md:flex-1">
@@ -111,6 +111,11 @@
                         </button>
                     </div>
                 </form>
+                <div class="mt-4">
+                    <button id="redirectGuests" class="w-full md:w-auto bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition">
+                        Mensen Doorlaten
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -171,3 +176,81 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+document.getElementById('groupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const data = {
+        groupSize: formData.get('groupSize'),
+        groupsAmount: formData.get('groupsAmount')
+    };
+    
+    console.log('Submitting form with data:', data);
+    
+    fetch('/coach', {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data);
+        if (data.message === 'Groups assigned successfully') {
+            // Show success message
+            alert('Groepen zijn succesvol gegenereerd!');
+            // Redirect all guests to their group color page
+            window.location.href = '/redirect-guests';
+        } else {
+            throw new Error('Unexpected response message');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Er is een fout opgetreden bij het genereren van de groepen: ' + error.message);
+    });
+});
+
+document.getElementById('redirectGuests').addEventListener('click', function() {
+    console.log('Redirect button clicked');
+    fetch('/redirect-guests-without-groups', {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data);
+        if (data.success) {
+            console.log('Redirect flag set successfully');
+            alert('Gasten worden doorgestuurd!');
+        } else {
+            console.error('Error in response:', data.error);
+            throw new Error(data.error || 'Er is een fout opgetreden');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Er is een fout opgetreden: ' + error.message);
+    });
+});
+</script>
+@endpush

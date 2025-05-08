@@ -32,7 +32,7 @@ class AdminController extends Controller
             'name' => $request->name
         ]);
 
-        // EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
         // EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Finn Bruinzeel', 'class_name' => '23SDB']);
 
         return redirect()->route('admin.index')->with('success', 'Game created successfully');
