@@ -9,12 +9,6 @@
 @endif
 
 
-<form action="" method="post">
-    @csrf
-    @method('post')
-    <button type="submit">Submit</button>
-</form>
-
 @if(session('error'))
     <x-toast :message="session('error')" type="error" />
 @endif
@@ -34,46 +28,54 @@
         </div>
     </div>
 
-<div class="flex flex-col items-center justify-center h-screen bg-[#595652]">
-    <h1 class="text-2xl font-bold mb-4">Game: {{$game->naam}}</h1>
-    <h2 class="text-2xl font-bold mb-4">Users toevoegen</h2>
-    <form action="" method="POST" class="space-y-4">
-        <div class="flex flex-col">
-            <label for="name" class="text-sm font-medium">Naam</label>
-            <input type="text" name="name" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Vul de naam in">
-        </div>
-        <div class="flex flex-col">
-            <label for="class" class="text-sm font-medium">Class</label>
-            <input type="text" name="class" id="class" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Vul de class in">
-        </div>
-        <button type="submit" class="px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-            Opslaan
-        </button>
-    </form>
-</div>
 
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Team Management -->
         <div class="bg-white rounded-xl shadow-lg p-4 md:p-6">
-            <h2 class="text-xl font-bold mb-4">Teams</h2>
+            <h2 class="text-xl font-bold mb-4">Spelleider Selecteren</h2>
             
-            <!-- Add Team Form -->
-            <form action="{{ route('admin.game.team.store', $game) }}" method="POST" class="mb-6">
+            <!-- Coach Selection Form -->
+            <form action="{{ route('admin.game.coach.store', $game) }}" method="POST" class="mb-6">
                 @csrf
                 <div class="flex gap-2">
-                    <select name="color" class="flex-1 rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                        <option value="red">Rood Team</option>
-                        <option value="blue">Blauw Team</option>
-                        <option value="green">Groen Team</option>
-                        <option value="yellow">Geel Team</option>
-                        <option value="purple">Paars Team</option>
+                    <select name="coach_id" class="flex-1 rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        @foreach($users as $user)
+                        @if($user->role !== 'admin')
+                        <option value="{{ $user->id }}" {{ $game->coach_id == $user->id ? 'selected' : '' }}>
+                            {{ $user->name }}
+                        </option>
+                        @endif
+                        @endforeach
                     </select>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
-                        Team Toevoegen
+                        Spelleider Toewijzen
                     </button>
                 </div>
             </form>
+
+            <!-- Display Selected Coach -->
+            @if($game->coach)
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-semibold text-lg">Huidige Spelleider</h3>
+                        <p class="text-gray-600">{{ $game->coach->name }}</p>
+                    </div>
+                    <form action="{{ route('admin.game.coach.remove', $game) }}" method="POST" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-red-500 hover:text-red-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            @else
+            <p class="text-gray-500 text-center py-4">Nog geen spelleider geselecteerd</p>
+            @endif
 
             <!-- Teams List -->
             <div class="space-y-4">
@@ -129,6 +131,12 @@
                         <input type="text" name="name" id="guest_name" required
                             class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                             placeholder="Voer naam in">
+                    </div>
+                    <div>
+                        <label for="class_name" class="block text-sm font-medium text-gray-700 mb-2">Klas</label>
+                        <input type="text" name="class_name" id="class_name" required
+                            class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            placeholder="Voer klas in">
                     </div>
                     <div>
                         <label for="team_id" class="block text-sm font-medium text-gray-700 mb-2">Team</label>

@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'coach@coach.com',
             'pin' => '123456',
         ]);
+        User::factory()->create([
+            'name' => 'Test Coach',
+            'email' => 'text@coach.com',
+            'pin' => '123456',
+        ]);
     }
 }
