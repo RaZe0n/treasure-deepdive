@@ -17,7 +17,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 <div class="bg-green-50 p-4 rounded-lg">
                     <p class="text-sm text-green-600">Ingeschreven Studenten</p>
-                    <p class="text-xl md:text-2xl font-bold">24</p>
+                    <p id="hoeveel" class="text-xl md:text-2xl font-bold">24</p>
                     <div class="mt-2 space-y-1">
                         <div class="transition-all duration-300 ease-in-out" x-data="{ expanded: false }">
                             <div class="space-y-1" :class="{ 'max-h-24 overflow-hidden': !expanded }">
@@ -34,16 +34,16 @@
                                 <p class="text-sm">• Noah Ali</p>
                                 <p class="text-sm">• Julia Bakker</p>
                             </div>
-                            <button 
-                                @click="expanded = !expanded" 
+                            <button
+                                @click="expanded = !expanded"
                                 class="text-sm text-green-600 hover:text-green-700 mt-2 flex items-center gap-1"
                             >
                                 <span x-text="expanded ? 'Minder tonen' : 'Meer lezen'"></span>
-                                <svg 
-                                    class="w-4 h-4 transition-transform duration-300" 
+                                <svg
+                                    class="w-4 h-4 transition-transform duration-300"
                                     :class="{ 'rotate-180': expanded }"
-                                    fill="none" 
-                                    stroke="currentColor" 
+                                    fill="none"
+                                    stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -65,16 +65,16 @@
                                 <p class="text-sm">• Lucas Jansen</p>
                                 <p class="text-sm">• Sophie de Vries</p>
                             </div>
-                            <button 
-                                @click="expanded = !expanded" 
+                            <button
+                                @click="expanded = !expanded"
                                 class="text-sm text-red-600 hover:text-red-700 mt-2 flex items-center gap-1"
                             >
                                 <span x-text="expanded ? 'Minder tonen' : 'Meer lezen'"></span>
-                                <svg 
-                                    class="w-4 h-4 transition-transform duration-300" 
+                                <svg
+                                    class="w-4 h-4 transition-transform duration-300"
                                     :class="{ 'rotate-180': expanded }"
-                                    fill="none" 
-                                    stroke="currentColor" 
+                                    fill="none"
+                                    stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -103,7 +103,8 @@
                     </div>
                     <div class="w-full md:flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-2">Aantal groepen</label>
-                        <input type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen" name="groupsAmount">
+                        <input id="groepen" type="number" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Aantal groepen" name="groupsAmount">
+                        <div class="m-2" id="personen"></div>
                     </div>
                     <div class="w-full md:w-auto">
                         <button type="submit" class="w-full md:w-auto bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
@@ -254,3 +255,5 @@ document.getElementById('redirectGuests').addEventListener('click', function() {
 });
 </script>
 @endpush
+
+@vite("resources/js/personen.js")

@@ -23,13 +23,13 @@
         </div>
 
         <div class="relative min-h-screen px-4 py-8">
-            <div class="max-w-md mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] gap-8">
+            <div class="max-w-md mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] gap-4">
                 <div class="space-y-4 text-center">
                     <h1 class="text-2xl font-bold text-gray-800">Uit welk jaar komt het Peerd van Ome Loeks?</h1>
                     <p class="text-lg text-gray-600">Ga naar het hoofdstation en maak een foto van het Peerd van Ome Loeks
                         waar het jaartal duidelijk zichtbaar op is.</p>
                 </div>
-                <div class="w-full max-w-[400px] rounded-3xl shadow-xl overflow-hidden bg-white">
+                <div class="w-full max-w-[240px] rounded-3xl shadow-xl overflow-hidden bg-white">
                     <img class="object-fit" src="/img/Peerd_van_ome_Loeks_Groningen.jpg" alt="">
                 </div>
                 <form action="post">
@@ -38,11 +38,24 @@
                             <input class="w-full rounded-md text-start" type="text" name="antwoord" id="antwoord" placeholder="vul hier je antwoord in">
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <input class="p-3 bg-{{ $kleur }} shadow-xl rounded-lg  my-4" type="submit" value="Verstuur">
+                    <div class="flex justify-center w-full">
+                        <input class="w-1/2 p-3 bg-{{ $kleur }} shadow-xl rounded-lg mt-4 text-xl text-white font-bold" type="submit" value="Verstuur">
                     </div>
                 </form>
+                <div class="flex justify-between w-full">
+                </div>
             </div>
         </div>
+    </div>
+    <!-- hint -->
+    <div class="absolute bottom-8 left-8">
+        <a class="p-3 bg-slate-200 rounded-md shadow-xl w-1/3 text-center font-semibold opacity-50/"
+        href="">
+        <i class="fa-solid fa-lightbulb mr-2"></i>Hint</a>
+    </div>
+    <!-- kaart -->
+    <div class="absolute bottom-8 right-8">
+        <a class="p-3 bg-slate-200 rounded-md shadow-xl w-1/3 text-center font-semibold" href="">
+            <i class="fa-solid fa-map mr-2"></i>Kaart</a>
     </div>
 @endsection

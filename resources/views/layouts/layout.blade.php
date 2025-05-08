@@ -14,6 +14,7 @@
     crossorigin=""></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
+    <script src="https://kit.fontawesome.com/43032dec1c.js" crossorigin="anonymous"></script>
     <title>@yield('title', 'TreasureHunt')</title>
     @vite('resources/css/app.css')
 </head>

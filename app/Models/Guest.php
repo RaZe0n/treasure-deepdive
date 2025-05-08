@@ -16,6 +16,7 @@ class Guest extends Model
         'pin',
         'group_color',
         'group_name'
+        'team_id',
     ];
 
     protected static function boot()

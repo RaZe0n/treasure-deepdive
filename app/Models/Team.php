@@ -8,6 +8,8 @@ class Team extends Model
 {
     protected $fillable = [
         'color',
+        'game_id',
+        'status',
         'teamgids',
     ];
 

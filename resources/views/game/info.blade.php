@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="bg-[url('../../public/img/background3.png')] bg-cover bg-center h-screen">
+<div class="bg-[url('../../public/img/leader.png')] bg-cover bg-center h-screen">
     <div class="flex flex-col justify-center items-center h-screen gap-4">
         <h1 class="text-center text-2xl font-chakra p-10">Je gaat straks door de stad heen lopen.</h1>
         <p class="text-center text-2xl">Tijdens het lopen krijg je op je scherm vragen te zien</p>

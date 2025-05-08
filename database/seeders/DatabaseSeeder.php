@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\EnlistedGuests;
+use App\Models\Game;
 use App\Models\Guest;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -39,5 +41,8 @@ class DatabaseSeeder extends Seeder
          EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Finn van der Kooi', 'class_name' => '23SDB']);
          EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Gerjan van der Kooi', 'class_name' => '23SDB']);
          EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Ezra van der Kooi', 'class_name' => '23SDB']);
+
+        $game = Game::create(['name' => 'gameTest', 'pin' => '123457']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
     }
 }

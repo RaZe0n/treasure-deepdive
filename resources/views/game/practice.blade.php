@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="bg-[url('../../public/img/background4.png')] bg-cover bg-center h-screen">
+<div class="bg-[url('../../public/img/practice.png')] bg-cover bg-center h-screen">
     <div class="flex flex-col justify-center items-center h-screen gap-4 p-7">
         <h1 class="text-center text-4xl font-chakra p-10">Oefenvraag</h1>
         <p class="text-center text-2xl">Je krijgt zo een voorbeeld vraag te zien</p>

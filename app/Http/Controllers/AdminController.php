@@ -85,7 +85,7 @@ class AdminController extends Controller
         ]);
 
         $guest = Guest::create([
-            'name' => $request->name,
+            'name' => ucwords($request->name),
             'team_id' => $request->team_id
         ]);
 
