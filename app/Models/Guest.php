@@ -15,7 +15,7 @@ class Guest extends Model
         'name',
         'pin',
         'group_color',
-        'group_name'
+        'group_name',
         'team_id',
     ];
 

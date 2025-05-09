@@ -7,7 +7,7 @@
         <h1 class="text-center text-4xl font-chakra p-10">Oefenvraag</h1>
         <p class="text-center text-2xl">Je krijgt zo een voorbeeld vraag te zien</p>
         <p class="text-center text-2xl">Dit is ook hoe later de andere vragen zullen zijn</p>
-        <a href="#" class="bg-[#3289BB] border-black border border-solid rounded-full p-2 w-2/3 text-center"><p>Verder -></p></a>
+        <a href="{{ route('vraag') }}" class="bg-[#3289BB] border-black border border-solid rounded-full p-2 w-2/3 text-center"><p>Verder -></p></a>
     </div>
 </div>
 

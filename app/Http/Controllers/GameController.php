@@ -24,11 +24,11 @@ class GameController extends Controller
     {
         $path = $this->getRedirectFlagPath($pin);
         $dir = dirname($path);
-        
+
         if (!file_exists($dir)) {
             mkdir($dir, 0755, true);
         }
-        
+
         file_put_contents($path, $value ? '1' : '0');
     }
 
@@ -72,7 +72,7 @@ class GameController extends Controller
     {
         $game = Game::find(session('game_id'));
 
-        $isValid = $game->enlisted_guests()->where('name', ucwords()($request->name))->exists();
+        $isValid = $game->enlisted_guests()->where('name', ucwords($request->name))->exists();
 
         if (!$isValid) {
             return back()->withErrors(['error' => '"' . $request->name . '" bestaat niet']);
@@ -125,11 +125,18 @@ class GameController extends Controller
         return view('game.waitingroom');
     }
 
-    public function color($color = null, $name = null) {
-        $naam = $name ?? "Groen";
-        $kleur = $color ?? "green-500";
+    public function color($color = null, $name = null)
+    {
+        $naam = "Groen";
+        $kleur = "green-500";
+        return view("game.groupcolor", ["naam" => $naam, "kleur" => $kleur]);
+    }
 
-        return view("game.vraag", ["naam" => $naam, "kleur" => $kleur]);
+    public function vraag($color = null, $name = null)
+    {
+        $naam = "Groen";
+        $kleur = "green-500";
+        return view("game.vraag2", ["naam" => $naam, "kleur" => $kleur]);
     }
 
     public function createGroups(Request $request)
@@ -213,13 +220,13 @@ class GameController extends Controller
             foreach ($shuffledGuests as $guest) {
                 $groupIndex = $guestIndex % $numberOfGroups;
                 $groupAssignments[$groupIndex]['guests'][] = $guest;
-                
+
                 try {
                     // Update guest with group information
                     $guest->group_color = $groupAssignments[$groupIndex]['color'];
                     $guest->group_name = $groupAssignments[$groupIndex]['name'];
                     $saved = $guest->save();
-                    
+
                     Log::info('Guest assigned to group', [
                         'guest_id' => $guest->id,
                         'guest_name' => $guest->name,
@@ -243,7 +250,7 @@ class GameController extends Controller
                     ]);
                     throw $e;
                 }
-                
+
                 $guestIndex++;
             }
 
@@ -270,7 +277,7 @@ class GameController extends Controller
     {
         try {
             $guest = Guest::where('user_id', Auth::id())->first();
-            
+
             if (!$guest) {
                 Log::info('No guest found for user', ['user_id' => Auth::id()]);
                 return response()->json(['hasGroup' => false, 'groupsGenerated' => false]);
@@ -286,7 +293,7 @@ class GameController extends Controller
                 'has_group' => $guest->group_color !== null,
                 'groups_generated' => $hasGroups
             ]);
-            
+
             return response()->json([
                 'hasGroup' => $guest->group_color !== null,
                 'groupsGenerated' => $hasGroups,
@@ -367,28 +374,29 @@ class GameController extends Controller
             ]);
             return response()->json(['error' => 'An error occurred while redirecting guests'], 500);
 
-        $guests = Guest::where('pin', $game->pin)->inRandomOrder()->get();
+            $guests = Guest::where('pin', $game->pin)->inRandomOrder()->get();
 
-        $totalGuests = $guests->count();
-        $totalTeams = $request->groupsAmount;
+            $totalGuests = $guests->count();
+            $totalTeams = $request->groupsAmount;
 
-        $defaultTeamSize = intdiv($totalGuests, $totalTeams);
-        $leftOverGuests = $totalGuests % $totalTeams;
+            $defaultTeamSize = intdiv($totalGuests, $totalTeams);
+            $leftOverGuests = $totalGuests % $totalTeams;
 
-        for ($i = 0; $i < $request->groupsAmount; $i++) {
-        $GuestCount = $i < $leftOverGuests ? $defaultTeamSize + 1 : $defaultTeamSize;
-            $team = Team::create([
-                'game_id' => $game->id,
-                'color' => 'red',
-            ]);
+            for ($i = 0; $i < $request->groupsAmount; $i++) {
+                $GuestCount = $i < $leftOverGuests ? $defaultTeamSize + 1 : $defaultTeamSize;
+                $team = Team::create([
+                    'game_id' => $game->id,
+                    'color' => 'red',
+                ]);
 
-            $teamMembers = collect();
-            for ($ii = 0; $ii < $GuestCount; $ii++) {
-                $guests->first()->team_id = $team->id;
-                $guests->first()->save();
-                $teamMembers->push($guests->shift());
+                $teamMembers = collect();
+                for ($ii = 0; $ii < $GuestCount; $ii++) {
+                    $guests->first()->team_id = $team->id;
+                    $guests->first()->save();
+                    $teamMembers->push($guests->shift());
+                }
+                $teamMembers = $guests->slice($GuestCount);
             }
-            $teamMembers = $guests->slice($GuestCount);
         }
     }
 
@@ -409,14 +417,14 @@ class GameController extends Controller
 
             // Check if redirect flag is set in cache
             $shouldRedirect = Cache::get('game_' . $guest->pin . '_redirect', false);
-            
+
             Log::info('Checking redirect status', [
                 'guest_id' => $guest->id,
                 'guest_pin' => $guest->pin,
                 'should_redirect' => $shouldRedirect,
                 'cache_key' => 'game_' . $guest->pin . '_redirect'
             ]);
-            
+
             return response()->json([
                 'shouldRedirect' => $shouldRedirect,
                 'debug' => [

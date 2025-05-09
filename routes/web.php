@@ -118,11 +118,11 @@ Route::middleware(IsGuestMiddelware::class)->group(function () {
 
     Route::view('/dropouts', 'game.dropouts');
 
-    Route::view('/info', 'game.info');
+    Route::view('/info', 'game.info')->name('info');
 
-    Route::view('/practice', 'game.practice');
+    Route::view('/practice', 'game.practice')->name('practice');
 
-    Route::view('/hint', 'game.hint');
+    Route::view('/hint', 'game.hint')->name('hint');
 });
 
 
@@ -139,9 +139,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::view('/test', 'game.vraag');
+Route::get('/vraag', [GameController::class, 'vraag'])->name('vraag');
 Route::get('/test2', [GameController::class, 'color']);
-Route::view('/map', 'game.map');
+Route::view('/map', 'game.map')->name('map');
 
 Route::middleware(AdminMiddleware::class)->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
