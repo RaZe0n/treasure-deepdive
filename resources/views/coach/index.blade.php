@@ -235,7 +235,7 @@ document.getElementById('redirectGuests').addEventListener('click', function() {
         }
     })
     .then(response => {
-        console.log('Response status:', response.status);
+        console.log('Response status: hallo', response.status);
         return response.json();
     })
     .then(data => {

@@ -61,12 +61,12 @@
     <!-- hint -->
     <div class="absolute bottom-8 left-8">
         <a class="p-3 bg-slate-200 rounded-md shadow-xl w-1/3 text-center font-semibold opacity-50/"
-        href="">
+        href="{{ route('hint') }}">
         <i class="fa-solid fa-lightbulb mr-2"></i>Hint</a>
     </div>
     <!-- kaart -->
     <div class="absolute bottom-8 right-8">
-        <a class="p-3 bg-slate-200 rounded-md shadow-xl w-1/3 text-center font-semibold" href="">
+        <a class="p-3 bg-slate-200 rounded-md shadow-xl w-1/3 text-center font-semibold" href="{{ route('map') }}">
             <i class="fa-solid fa-map mr-2"></i>Kaart</a>
     </div>
 @endsection

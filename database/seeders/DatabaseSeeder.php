@@ -8,8 +8,6 @@ use App\Models\Guest;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Game;
-use App\Models\EnlistedGuests;
 
 class DatabaseSeeder extends Seeder
 {
@@ -38,11 +36,8 @@ class DatabaseSeeder extends Seeder
         ]);
         $game = Game::create(['name' => 'gameTest', 'pin' => '123456']);
         EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
-         EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Finn van der Kooi', 'class_name' => '23SDB']);
-         EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Gerjan van der Kooi', 'class_name' => '23SDB']);
-         EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Ezra van der Kooi', 'class_name' => '23SDB']);
-
-        $game = Game::create(['name' => 'gameTest', 'pin' => '123457']);
-        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Rutger van der Kooi', 'class_name' => '23SDB']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Finn Bruinzeel', 'class_name' => '23SDB']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Gerjan Nienhuis', 'class_name' => '23SDB']);
+        EnlistedGuests::create(['game_id' => $game->id, 'name' => 'Ezra Vos', 'class_name' => '23SDB']);
     }
 }
